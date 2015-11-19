@@ -7,9 +7,11 @@
             background: #EFEFEF;
             font-family: arial, helvetica;
         }
-        #wrapper{
-            background-image: url("http://img0.thatpervert.com/pics/post/full/mlp-porn-r34--my-little-pony-1856543.png");
+        #wrapper{ 
             background-position: cover;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat; 
             width: 3840px;
             height: 2160px;
             margin: 1px;
@@ -34,22 +36,31 @@
                 <h1>THIS IS THE FIRST FUCKING 4K WEBPAGE!</h1>
         </div>
         <script type="text/javascript"> 
-            (function(){
-                var w, h, rW,rH; 
-                function _update(e){ 
-                    w = window.innerWidth;
-                    h = window.innerHeight; 
-                    rW = 3840/w;
-                    rH = 2160/h;
-                } 
-                function _move(e){  
-                    window.scrollTo(Math.round(e.clientX*rW),Math.round( e.clientY*rH)); 
-                } 
-                window.onload = _update;
-                window.onresize = _update;
-                window.onmousemove = _move;
-    
-            })(); 
+        (function(){
+            var w, h, rW,rH; 
+            function _update(e){ 
+                w = window.innerWidth;
+                h = window.innerHeight; 
+                rW = 3840/w;
+                rH = 2160/h;
+            } 
+            function _move(e){  
+                window.scrollTo(Math.round(e.clientX*rW),Math.round( e.clientY*rH)); 
+            } 
+
+            function _load(){
+                var bg = [
+                            'http://img0.thatpervert.com/pics/post/full/mlp-porn-r34--my-little-pony-1856543.png'
+                        ]; 
+                document.getElementById('wrapper').style.backgroundImage = 'url("'+bg[Math.round(Math.random()*(bg.length-1))]+'")';
+                return _update();
+            }
+
+            window.onload = _load;
+            window.onresize = _update;
+            window.onmousemove = _move;
+
+        })(); 
         </script>
     </body>
 </html>
