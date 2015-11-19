@@ -32,6 +32,23 @@
         <div id="wrapper">
                 <h1>THIS IS THE FIRST FUCKING 4K WEBPAGE!</h1>
         </div>
-        
+        <script type="text/javascript"> 
+            (function(){
+                var w, h, rW,rH; 
+                function _update(e){ 
+                    w = window.innerWidth;
+                    h = window.innerHeight; 
+                    rW = 3840/w;
+                    rH = 2160/h;
+                } 
+                function _move(e){  
+                    window.scrollTo(Math.round(e.clientX*rW),Math.round( e.clientY*rH)); 
+                } 
+                window.onload = _update;
+                window.onresize = _update;
+                window.onmousemove = _move;
+    
+            })(); 
+        </script>
     </body>
 </html>
